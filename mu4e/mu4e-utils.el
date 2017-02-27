@@ -1063,6 +1063,12 @@ in the background; otherwise, pop up a window."
       (run-hooks 'mu4e-update-pre-hook)
       (mu4e~update-mail-and-index-real run-in-background))))
 
+(defun mu4e-update-mail-and-index-run-in-background ()
+  "Get a new mail by running `mu4e-get-mail-command'. Run
+in the background; "
+  (interactive)
+  (mu4e-update-mail-and-index t))
+
 (defun mu4e-kill-update-mail ()
   "Stop the update process by killing it."
   (interactive)

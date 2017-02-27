@@ -48,6 +48,7 @@
 
     ;;
     (define-key map "U" 'mu4e-update-mail-and-index)
+    (define-key map "u" 'mu4e-update-mail-and-index-run-in-background)
     (define-key map  (kbd "C-S-u")   'mu4e-update-mail-and-index)
     ;; for terminal users
     (define-key map  (kbd "C-c C-u") 'mu4e-update-mail-and-index)
@@ -155,6 +156,9 @@ clicked."
 
 	(mu4e~main-action-str "\t* [U]pdate email & database\n"
 	  'mu4e-update-mail-and-index)
+
+        (mu4e~main-action-str "\t* [u]pdate, in the background\n"
+	  'mu4e-update-mail-and-index-run-in-background)
 
 	;; show the queue functions if `smtpmail-queue-dir' is defined
 	(if (file-directory-p smtpmail-queue-dir)
